@@ -4,9 +4,9 @@
 <STYLE TYPE="text/css"></STYLE>
 </HEAD>
 <BODY>
-<SYNC Start=1000><P>안녕하세요 1번 한글 자막입니다.
+<SYNC Start=1000><P>안녕하세요 1번 SAMI 자막입니다.
 <SYNC Start=2000><P>&nbsp;
-<SYNC Start=3000><P>안녕하세요 2번 한글 자막입니다.
+<SYNC Start=3000><P>안녕하세요 2번 SAMI 자막입니다.
 <SYNC Start=4000><P>&nbsp;
 </BODY>
 </SAMI>

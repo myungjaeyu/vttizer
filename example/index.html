@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>vttizer</title>
+        <script src="../dist/vttizer.min.js"></script>
+    </head>
+    <body>
+            <video controls>
+                <source src="./media/video.mp4" type="video/mp4">
+            </video>
+
+            <br>
+            <input type="file">
+            
+            <p>
+            <button onclick="change('sample.vtt')">WebVTT 자막</button>
+            <button onclick="change('sample.srt')">SRT 자막</button>
+            <button onclick="change('sample.smi')">SMI 자막</button>
+
+        <script>
+
+            var video = document.querySelector('video'),
+                upload = document.querySelector('input');
+
+
+            upload.onchange = (e) => {
+
+                let reader = new FileReader(),
+                    file   = e.target.files[0];
+
+                reader.onload = (v) => {
+                    let str    = v.srcElement.result,
+                        format = file.name.split('.').pop(-1);
+
+                    var vttizer = new Vttizer(str, format);
+                    vttizer.render(video);
+
+                };
+
+                reader.readAsText(file);
+            };
+
+
+
+            var change = (sub) => fetch('sub/' + sub)
+                                        .then(e => e.text())
+                                        .then(e => {
+                                            let str    = e,
+                                                format = sub.split('.').pop(-1);
+
+                                            var vttizer = new Vttizer(str, format);
+                                            vttizer.render(video);
+
+                                        });
+
+            change('sample.smi');
+        </script>
+    </body>
+</html>
