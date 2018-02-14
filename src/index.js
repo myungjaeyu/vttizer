@@ -29,6 +29,8 @@ class Vttizer {
         this.track = this.videoElement.addTextTrack('captions');
         this.track.mode = 'showing';
 
+        Array.from(this.videoElement.textTracks).filter(e => e !== this.track).map(e => e.mode = 'hidden');
+
         this.data.forEach(
             e => this.track.addCue(new VTTCue(e.start, e.end, e.text))
         );
