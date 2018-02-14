@@ -1,22 +1,22 @@
 {
-  "name": "convert-to-vtt",
+  "name": "vttizer",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c -w"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/u4bi/convert-to-vtt.git"
+    "url": "git+https://github.com/u4bi/vttizer.git"
   },
   "keywords": [],
   "author": "Myungjae Yu <rootcode10@gmail.com> (https://github.com/u4bi)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/u4bi/convert-to-vtt/issues"
+    "url": "https://github.com/u4bi/vttizer/issues"
   },
-  "homepage": "https://github.com/u4bi/convert-to-vtt#readme",
+  "homepage": "https://github.com/u4bi/vttizer#readme",
   "devDependencies": {
     "ava": "^0.25.0",
     "rollup": "^0.55.5",
