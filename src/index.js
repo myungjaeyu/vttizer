@@ -7,6 +7,8 @@ class Vttizer {
         this.subtitle = subtitle;
         this.format = format || 'vtt';
         this.data = this._process(this.format, this.subtitle);
+        this.videoElement;
+        this.track;
 
     }
 
@@ -18,6 +20,18 @@ class Vttizer {
             case 'smi' : return [];
             default : return [];
         }
+
+    }
+
+    render(videoElement) {
+        this.videoElement = videoElement;
+
+        this.track = this.videoElement.addTextTrack('captions');
+        this.track.mode = 'showing';
+
+        this.data.forEach(
+            e => this.track.addCue(new VTTCue(e.start, e.end, e.text))
+        );
 
     }
 
