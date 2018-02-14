@@ -1,4 +1,4 @@
-import { VTTParser } from './parser/index';
+import { VTTParser, SRTParser } from './parser/index';
 
 class Vttizer {
     
@@ -16,7 +16,7 @@ class Vttizer {
 
         switch(format) {
             case 'vtt' : return VTTParser(subtitle);
-            case 'srt' : return [];
+            case 'srt' : return SRTParser(subtitle);
             case 'smi' : return [];
             default : return [];
         }
