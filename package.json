@@ -1,0 +1,25 @@
+{
+  "name": "convert-to-vtt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/u4bi/convert-to-vtt.git"
+  },
+  "keywords": [],
+  "author": "Myungjae Yu <rootcode10@gmail.com> (https://github.com/u4bi)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/u4bi/convert-to-vtt/issues"
+  },
+  "homepage": "https://github.com/u4bi/convert-to-vtt#readme",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "rollup": "^0.55.5",
+    "rollup-plugin-uglify-es": "0.0.1"
+  }
+}
