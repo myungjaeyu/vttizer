@@ -13,7 +13,7 @@ class Vttizer {
     _process(format, subtitle) {
 
         switch(format) {
-            case 'vtt' : return [];
+            case 'vtt' : return VTTParser(subtitle);
             case 'srt' : return [];
             case 'smi' : return [];
             default : return [];
