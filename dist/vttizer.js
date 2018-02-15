@@ -14,14 +14,14 @@ var VTTParser = (subtitle) => {
             .replace(/^\s+|\s+$/g, '') // trim
             .split('\n\n')
             .forEach(e => {
-                let cue = e.split(/\n/),
+                let cue = e.split(/\n/).filter(e => e),
                 m = cue[1].match(/(\d+):(\d+):(\d+)(?:.(\d+))?\s*--?>\s*(\d+):(\d+):(\d+)(?:.(\d+))?/);
 
                 data.push({
                     id : cue[0],
                     start : (parseInt(m[1], 10) * 60 * 60) + (parseInt(m[2], 10) * 60) + (parseInt(m[3], 10)) + (parseInt(m[4], 10) / 1000),
                     end   : (parseInt(m[5], 10) * 60 * 60) + (parseInt(m[6], 10) * 60) + (parseInt(m[7], 10)) + (parseInt(m[8], 10) / 1000),
-                    text  : cue[2]
+                    text  : cue.filter( (e, i) => i > 1).join('\n')
                 });
             });
 
@@ -35,14 +35,14 @@ var SRTParser = (subtitle) => {
             .replace(/^\s+|\s+$/g, '') // trim
             .split('\n\n')
             .forEach(e => {
-                let cue = e.split(/\n/),
+                let cue = e.split(/\n/).filter(e => e),
                     m = cue[1].match(/(\d+):(\d+):(\d+)(?:,(\d+))?\s*--?>\s*(\d+):(\d+):(\d+)(?:,(\d+))?/);
 
                 data.push({
                     id : cue[0],
                     start : (parseInt(m[1], 10) * 60 * 60) + (parseInt(m[2], 10) * 60) + (parseInt(m[3], 10)) + (parseInt(m[4], 10) / 1000),
                     end   : (parseInt(m[5], 10) * 60 * 60) + (parseInt(m[6], 10) * 60) + (parseInt(m[7], 10)) + (parseInt(m[8], 10) / 1000),
-                    text  : cue[2]
+                    text  : cue.filter( (e, i) => i > 1).join('\n')
                 });
             });
 
@@ -52,16 +52,19 @@ var SRTParser = (subtitle) => {
 var SMIParser = (subtitle) => {
     let data = [];
 
-    let cue = subtitle.match(/(<SYNC[^]*?)(?=\s*<SYNC|\s*<\/BODY)/gi)
-                      .map(e => e.match(/<SYNC Start=(\d+)><P.*>(.*)?/));
+    let cue = subtitle.replace(/(\r\n|\n|\r)/gm, '')
+                        .match(/(<SYNC[^]*?)(?=\s*<SYNC|\s*<\/BODY)/gi)
+                        .map(e => [ +e.split('><')[0].replace('<SYNC Start=', ''), e.split('><')[1]
+                        .replace(/<br>/g, '\n')
+                        .split('>')[1]]);
 
     cue.forEach( (e, i) => {
 
         data.push({
             id : i + 1,
-            start : (e[1]) / 1000,
-            end   : (cue[i+1] ? cue[i+1][1] : e[1]) / 1000,
-            text  : e[2]
+            start : (e[0]) / 1000,
+            end   : (cue[i+1] ? cue[i+1][0] : e[0]) / 1000,
+            text  : e[1]
         });
 
     });
