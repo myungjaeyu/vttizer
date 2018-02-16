@@ -17,6 +17,9 @@
             <button onclick="change('sample.vtt')">WebVTT 자막</button>
             <button onclick="change('sample.srt')">SRT 자막</button>
             <button onclick="change('sample.smi')">SMI 자막</button>
+            
+            <p>
+            <button onclick="change('The.Ritual.2017.1080p.WEB-DL.DD5.1.H264-FGT.smi')">The.Ritual.2017.1080p.WEB-DL.DD5.1.H264-FGT.smi</button>
 
         <script>
 
@@ -33,7 +36,7 @@
                     let str    = v.srcElement.result,
                         format = file.name.split('.').pop(-1);
 
-                    var vttizer = new Vttizer(str, format);
+                    let vttizer = new Vttizer(str, format);
                     vttizer.render(video);
 
                 };
@@ -49,12 +52,12 @@
                                             let str    = e,
                                                 format = sub.split('.').pop(-1);
 
-                                            var vttizer = new Vttizer(str, format);
+                                            let vttizer = new Vttizer(str, format);
                                             vttizer.render(video);
 
                                         });
 
-            change('sample.smi');
+            change('The.Ritual.2017.1080p.WEB-DL.DD5.1.H264-FGT.smi');
         </script>
     </body>
 </html>
