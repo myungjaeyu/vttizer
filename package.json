@@ -1,6 +1,6 @@
 {
   "name": "vttizer",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A library to render many subtitles format on HTML5 video in the browser.",
   "main": "dist/vttizer.min.js",
   "scripts": {
