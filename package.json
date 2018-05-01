@@ -1,6 +1,6 @@
 {
   "name": "vttizer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A library to render many subtitles format on HTML5 video in the browser.",
   "main": "dist/vttizer.min.js",
   "scripts": {
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/u4bi/vttizer.git"
+    "url": "git+https://github.com/myungjaeyu/vttizer.git"
   },
   "keywords": [],
-  "author": "Myungjae Yu <rootcode10@gmail.com> (https://github.com/u4bi)",
+  "author": "Myungjae Yu <rootcode10@gmail.com> (https://github.com/myungjaeyu)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/u4bi/vttizer/issues"
+    "url": "https://github.com/myungjaeyu/vttizer/issues"
   },
-  "homepage": "https://github.com/u4bi/vttizer#readme",
+  "homepage": "https://github.com/myungjaeyu/vttizer#readme",
   "devDependencies": {
     "ava": "^0.25.0",
     "rollup": "^0.55.5",

@@ -5,12 +5,12 @@
 > A library to render many subtitles format on HTML5 video in the browser.
 
 ## Demo
-> https://u4bi.github.io/vttizer/example
+> https://myungjaeyu.github.io/vttizer/example
 
 ## Install
 
 ```html
-<script src="https://cdn.rawgit.com/u4bi/vttizer/master/dist/vttizer.min.js"></script>
+<script src="https://cdn.rawgit.com/myungjaeyu/vttizer/master/dist/vttizer.min.js"></script>
 ```
 
 ## Usage
