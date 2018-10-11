@@ -4,6 +4,8 @@
 
 > A library to render many subtitles format on HTML5 video in the browser.
 
+[![NPM Badge](https://nodei.co/npm/vttizer.png?downloads=true)](https://www.npmjs.com/package/vttizer)
+
 ## Demo
 > https://myungjaeyu.github.io/vttizer/example
 
